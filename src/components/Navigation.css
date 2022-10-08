@@ -1,3 +1,6 @@
+.navigation {
+  display: block;
+}
 .navbar {
     background:beige;
     height: 3rem; 

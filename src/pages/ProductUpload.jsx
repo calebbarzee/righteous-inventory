@@ -66,7 +66,7 @@ function Upload() {
     };
 
     return (
-        <div className='App'>
+        <div className='productUpload'>
             <center>
                 <form className='form' onSubmit={imgUpload}>
                     <h1>Please upload your desired image and data.</h1>
