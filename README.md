@@ -1,8 +1,6 @@
 # Overview
 
-The program we wrote is a web app using ReactJS that creates a quiz for the user to learn about visual art. The pieces are uploaded by an admin and then are passed through a code that creates a pixelated image that vaguely resembles the original art piece. As the user makes guesses the art begins to become clearer until they guess the right answer. After they have completed the quiz they are scored and have the option to take the quiz again. 
-
-There is a home page that will have a large button that allows you to take the quiz. It will take you to the quiz and then score you. There will be a return to menu button where you can take the quiz again. Other functinality includes the admin login that allows users to upload their art and quiz questions. 
+The program we wrote is a web app using ReactJS for inventory management. The products are uploaded by an admin and then are displayed in the dashboard. Future featuress include the ability to edit and delete data from the dashboard. The data is stored in a central cloud database (firebase).
 
 # Development Environment
 
@@ -31,11 +29,8 @@ HTML and CSS are languages that give structure and style to web pages, JavaScrip
 
 # Collaborators
 
-Justyn Mencl,
-Caleb Barzee,
-Christian Martinez,
-Ekene Okeke,
-Trevor Lamoglia
+Caleb Barzee
+Ebenezer Mensah
 
 # Useful Websites
 
@@ -49,7 +44,3 @@ Trevor Lamoglia
 * [freeCodeCamp](https://www.freecodecamp.org/news/how-to-use-react-icons/)
 * [W3Schools - React](https://www.w3schools.com/REACT/DEFAULT.ASP)
 * [YouTube - Fireship](https://www.youtube.com/c/Fireship?app=desktop)
-
-# Future Work
-
-* TBD
