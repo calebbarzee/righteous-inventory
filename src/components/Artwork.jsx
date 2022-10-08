@@ -1,0 +1,6 @@
+/* 
+    returns the rendoring for an artwork component. The component is 
+    generated via image script after retrieving image data from 
+    firebase. This script is contained withing Artwork.js and called
+    as a function in manipulating the image.
+*/
