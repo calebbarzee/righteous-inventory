@@ -4,12 +4,16 @@ import {db} from '../firebase/firebase-config';
 import "./ProductUpload.css";
 
 function Upload() {
-  const [image , setImage] = useState(null);
-  const [style , setStyle] = useState("");
-  const [artist , setArtist] = useState("");
-  const [title , setTitle] = useState("");
-  const [url , setUrl] = useState("");
   const [progress, setProgress] = useState(0);
+  const [image, setImage] = useState(null);
+  const [url , setUrl] = useState("");
+  const [productType, setProductType] = useState("");
+  const [productName, setProductName] = useState("");
+  const [expDate, setExpDate] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [cost, setCost] = useState(0);
+  const [employee, setEmployee] = useState("");
+
 
   const handleChange = e => {
     if (e.target.files[0]) {
@@ -45,7 +49,7 @@ function Upload() {
   };
   
     const dataUpload = (url) => {
-      db.collection("artworks").add({
+      db.collection("inventory").add({
       imgURL: url,
       productType: productType,
       productName: productName,
@@ -58,10 +62,10 @@ function Upload() {
       })
       setProductName("");
       setProductType("");
-      setexp("");
-      setquantity(0);
-      setcost(0);
-      setemployee("");
+      setExpDate("");
+      setQuantity(0);
+      setCost(0);
+      setEmployee("");
 
     };
 
@@ -72,17 +76,17 @@ function Upload() {
               <h1>Please upload your desired image and data.</h1>
               <input type="file" onChange={handleChange}/>
               <label>Product Name</label>
-              <input type="text" value={productName} className="productNameInput" onChange={(e) => {setStyle(e.target.value)} }/>
+              <input type="text" value={productName} className="productNameInput" onChange={(e) => {setProductName(e.target.value)} }/>
               <label>Product Type</label>
-              <input type="text" value={productType} className="productTypeInput" onChange={(e) => {setArtist(e.target.value)} } />
+              <input type="text" value={productType} className="productTypeInput" onChange={(e) => {setProductType(e.target.value)} } />
               <label>Expiration Date</label>
-              <input type="date" value={expDate} className="expDateInput" onChange={(e) => {setTitle(e.target.value)} } />
+              <input type="date" value={expDate} className="expDateInput" onChange={(e) => {setExpDate(e.target.value)} } />
               <label>Quantity</label>
-              <input type="date" value={quantity} className="quantityInput" onChange={(e) => {setTitle(e.target.value)} } />
+              <input type="number" value={quantity} className="quantityInput" onChange={(e) => {setQuantity(e.target.value)} } />
               <label>Cost</label>
-              <input type="date" value={cost} className="costInput" onChange={(e) => {setTitle(e.target.value)} } />
+              <input type="number" value={cost} className="costInput" onChange={(e) => {setCost(e.target.value)} } />
               <label>Employee Name</label>
-              <input type="date" value={employee} className="employeeInput" onChange={(e) => {setTitle(e.target.value)} } />
+              <input type="text" value={employee} className="employeeInput" onChange={(e) => {setEmployee(e.target.value)} } />
               <button type="submit">Upload</button>
             </form> 
           </center>
