@@ -6,11 +6,11 @@ import {
     signOut,
 } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
-import './Login.css';
+import './SignUp.css';
 
 function App() {
-    const [loginEmail, setLoginEmail] = useState('');
-    const [loginPassword, setLoginPassword] = useState('');
+    const [registerEmail, setRegisterEmail] = useState('');
+    const [registerPassword, setRegisterPassword] = useState('');
 
     const [user, setUser] = useState({});
 
@@ -20,50 +20,38 @@ function App() {
         });
     });
 
-    const login = async () => {
+    const register = async () => {
         try {
-            const user = await signInWithEmailAndPassword(
+            const user = await createUserWithEmailAndPassword(
                 auth,
-                loginEmail,
-                loginPassword
+                registerEmail,
+                registerPassword
             );
             console.log(user);
         } catch (error) {
             console.log(error.message);
         }
     };
-
-    const logout = async () => {
-        await signOut(auth);
-    };
-
     return (
         <div className='app'>
             <div className='authenticate'>
-                <h3> Login </h3>
+                <h3> Register User </h3>
                 <input
-                    type='email'
                     placeholder='Email...'
                     onChange={(event) => {
-                        setLoginEmail(event.target.value);
+                        setRegisterEmail(event.target.value);
                     }}
                 />
                 <input
-                    type='password'
                     placeholder='Password...'
                     onChange={(event) => {
-                        setLoginPassword(event.target.value);
+                        setRegisterPassword(event.target.value);
                     }}
                 />
                 <br />
-                <button onClick={login}> Login </button>
+
+                <button onClick={register}> Create User</button>
             </div>
-
-            <h4> User currently Logged In: {user?.email}</h4>
-
-            <button onClick={logout}> Sign Out </button>
         </div>
     );
 }
-
-export default App;
